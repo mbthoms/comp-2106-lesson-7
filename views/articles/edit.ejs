@@ -1,14 +1,15 @@
 <%- include ../partials/header.ejs %>
 
 <main>
-    <form method="post" action="add">
+    <form method="post" action="<%= article._id%>">
         <feildset>
             <label for="title">Title:*</label>
-            <input type="text" name="title" required >
+            <input type="text" name="title" required value="<%= article.title %>" />
         </feildset>
         <fieldset>
             <label for="content">Content:*</label>
-            <input type="text" name="content" required>
+            <textarea name="content" id="content" required><%= article.content %></textarea>
+
         </fieldset>
         <button class="btn btn-primary" type="submit">Save</button>
 
